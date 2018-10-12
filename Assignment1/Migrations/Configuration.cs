@@ -19,7 +19,15 @@ namespace Assignment1.Migrations
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-       
+            context.Sales.AddOrUpdate(p => p.Id,
+                    new Models.Sale() { Id = 1, Date = DateTime.Now, Customer = new Models.Customer(), Employee = new Models.Employee() });
+            context.Customers.AddOrUpdate(p => p.Id,
+                   new Models.Customer() { Id = 1, Name = "Customer", Email = "customer@assignment.com" });
+            context.StoreLocations.AddOrUpdate(p => p.Id,
+                   new Models.StoreLocation() { Id = 1, LocationName = "asiignmentStore" });
+            context.Products.AddOrUpdate(p => p.Id,
+                   new Models.Product() { Id = 1, Name = "Apple", Price = 5, Quantity = 6 });
+            context.SaveChanges();
 
 
 
