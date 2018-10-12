@@ -9,6 +9,11 @@ namespace Assignment1.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal RegistrationNumber { get; set; }
+        public int RegistrationNumber { get; set; }
+        public ICollection<Sale> Sales { get; set; }
+        public Employee()
+        {
+            Sales = new List<Sale>();
+        }
     }
 }

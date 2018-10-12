@@ -29,5 +29,10 @@ namespace Assignment1.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<StoreLocation> StoreLocations { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }
